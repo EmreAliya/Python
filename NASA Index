@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Daily Space Picture</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <style>
+            #speed-container {
+                position: fixed;
+                right: 2em;
+                bottom: 0;
+            }
+           
+            h1, h2, #start {        
+                color: #b4b1b8;
+            }
+            table {
+                background-color: #5591a9;
+                margin-bottom: 2em; 
+            }
+            
+
+        </style>
+
+        <body style="background-color:#062c43;"></body>
+    </head>
+
+    <body> 
+        <div class="container">
+            <main>
+                <section>
+                    <h1 class="center-align">Space Picture Of the Day</h1>
+
+                    <p style="font-family: poppins, sans-serif; color: #b4b1b8">This is a website that shows NASA's picture of the day and gives a short summary. You can also search up a date and see information on the astroids passing by earth. NOTE: If the picture hasnt shown up it is likely not used due to copyright issues, please visit</p>
+                    <a href="https://apod.nasa.gov/apod/astropix.html">NASA's APD</a>
+
+                    <div class="row">
+                        <div class="col s12 m8 offset-m2">
+                            <div id="apod" class="card">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                 <aside>  
+                    <h4>Information on Astroids</h4>
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input type="text" id="start" class="datepicker">
+                                <label for="start">Approach Date</label>
+                            </div>
+                        </div>
+                    </form>
+                    <table id="afeedTable" class="striped hide">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Asteroid</th>
+                                <th>Close to hitting?</th>
+                                <th>Magnitude</th>
+                                <th>Min (Km)</th>
+                                <th>Max (Km)</th>
+                                <th>Miss Distance (m)</th>
+                                <th>Approach Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="afeed">
+                            
+                        </tbody>
+                    </table>
+                </aside>
+            </main>
+        </div>
+        <footer class="page-footer blue-green ">
+            <div class="container">
+                <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">All credit goes to NASA</h5>
+                    
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h10 class="white-text">For more Information go to </h10>
+                    <a href="https://www.nasa.gov/">NASA</a>
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                
+
+                </div>
+            </div>
+        </footer>
+
+        <div id="speed-container" class="range-field">
+            <label for="speed-slider">Travel Speed</label>
+            <input value="20" type="range" id="speed-slider" step="1" min="0" max="100" />
+        </div>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="nasa.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+        <script src="starfield.js"></script>
+    </body>
+</html>
